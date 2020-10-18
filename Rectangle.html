@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retangle</title>
+</head>
+<body>
+<script>
+    class Rectangle
+    {
+        lengthRect;
+        widthRect;
+        constructor(lengthRect, widthRect) {
+            this.lengthRect=lengthRect;
+            this.widthRect=widthRect;
+        }
+        showInfor()
+        {
+            document.write(this.widthRect +" " +this.lengthRect+ '<br>');
+        }
+        changeLength(lengthRect)
+        {
+            return this.lengthRect=lengthRect;
+
+        }
+        changeWidth(widthRect)
+        {
+            return this.widthRect=widthRect;
+        }
+        getArea(widthRect, lengthRect)
+        {
+            let area=this.lengthRect*this.widthRect;
+            document.write(area+'<br>');
+        }
+        getPerim(widthRect, lengthRect)
+        {
+            let perim= this.widthRect+this.lengthRect;
+            document.write(perim+'<br>');
+        }
+    }
+    let rect1 = new Rectangle(30,20);
+    rect1.showInfor();
+    rect1.changeLength(40);
+    rect1.showInfor();
+    rect1.getArea();
+    rect1.getPerim();
+</script>
+</body>
+</html>
