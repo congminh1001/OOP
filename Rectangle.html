@@ -20,19 +20,19 @@
         }
         changeLength(lengthRect)
         {
-            return this.lengthRect=lengthRect;
+            this.lengthRect=lengthRect;
 
         }
         changeWidth(widthRect)
         {
-            return this.widthRect=widthRect;
+             this.widthRect=widthRect;
         }
-        getArea(widthRect, lengthRect)
+        getArea()
         {
             let area=this.lengthRect*this.widthRect;
             document.write(area+'<br>');
         }
-        getPerim(widthRect, lengthRect)
+        getPerim()
         {
             let perim= this.widthRect+this.lengthRect;
             document.write(perim+'<br>');
