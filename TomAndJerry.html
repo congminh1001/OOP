@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tom And Jerry</title>
+</head>
+<body>
+<script>
+    class Animal
+    {
+        name;
+        weight;
+        speed;
+        constructor(name, weight, speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+        say()
+        {
+            document.write('No Information ' + " <br>");
+        }
+        showInfo()
+        {
+            document.write(this.name + " - " + this.weight + " - " + this.speed + '<br>');
+        }
+    }
+    class Cat extends Animal
+    {
+        constructor(name, weight, speed) {
+            super(name, weight, speed);
+        }
+
+    }
+    class Mouse extends Animal
+    {
+        status;
+        constructor(name, weight, speed, status) {
+            super(name, weight, speed);
+            this.status = status ;
+        }
+        say()
+        {
+            document.write('chit chit');
+        }
+        showInfo()
+        {
+            document.write(this.name + " - " + this.weight + " - " + this.speed + " - " +this.status + '<br>');
+        }
+    }
+    function catchMouse()
+    {
+        if(cat.speed>mouse.speed)
+        {
+            if (mouse.status=='live'||mouse.status=='LIVE'||mouse.status=='Live')
+            {
+                document.write("The cat catch the mouse :) "+'<br>');
+                cat.weight=cat.weight+mouse.weight;
+                document.write('And weight of cat is: '+' '+ cat.weight);
+            }
+            else
+            {
+                document.write('The cat catch the mouse but it dons eat the mouse');
+            }
+        }
+        else
+        {
+            document.write("The cat don't catch the mouse :(");
+        }
+    }
+    let cat = new Cat('Tom', 3, 100);
+    cat.showInfo();
+    let mouse = new Mouse('jerry', 0.2, 800, 'live');
+    mouse.showInfo();
+    catchMouse();
+</script>
+</body>
+</html>
