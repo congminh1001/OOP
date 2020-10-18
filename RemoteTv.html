@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RemoteTv</title>
+</head>
+<body>
+<script>
+    class RemoteTv
+    {
+        code;
+        constructor(code) {
+            this.code=code;
+        }
+    }
+
+    class remote extends RemoteTv
+    {
+        kenh;
+        amLuong;
+        constructor(code,kenh,amLuong) {
+            super(code);
+            this.kenh=kenh;
+            this.amLuong=amLuong;
+        }
+
+    }
+
+    class TV extends RemoteTv
+    {
+        channel;
+        status;
+        volume;
+        constructor(code, channel, status, volume) {
+            super(code);
+            this.channel=channel;
+            this.status=status;
+            this.volume=volume;
+        }
+        showInfor() {
+            document.write(this.code + "<br>" + this.status + "<br>" + this.channel + "<br>" + this.volume + "<br>")
+        }
+        ChangeChannel(channel)
+        {
+            this.channel=channel;
+        }
+        changeVolume(volume)
+        {
+            this.volume=volume;
+        }
+
+    }
+
+function nextChannel()
+{
+    if(tv.code==remote1.code&&tv.status=='on')
+    {
+       tv.ChangeChannel(remote1.kenh);
+    }
+    else
+    {
+        document.write('Error');
+    }
+}
+function changeVolume()
+{
+    if (tv.code==remote1.code&&tv.status=='on')
+    {
+        tv.changeVolume(remote1.amLuong);
+    }
+}
+    let remote1 =  new remote(1234,'vtv6',100);
+    let tv = new TV(1234,'vtv3','on',40);
+    tv.showInfor();
+    changeVolume();
+    nextChannel();
+    tv.showInfor();
+
+
+
+</script>
+
+</body>
+</html>
